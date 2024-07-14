@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Gym Management System</h1>
+        <div id="login">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-error" class="error"></p>
+        </div>
+        <div id="admin" style="display: none;">
+            <h2>Admin Panel</h2>
+            <button onclick="showAddMemberForm()">Add Member</button>
+            <button onclick="showMembers()">View Members</button>
+            <button onclick="showBills()">Create Bills</button>
+            <div id="admin-content"></div>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+    <script src="app.js">
+       // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCX94AtTbXbCNyHlxP0thkOHQpNQz-PRO4",
+    authDomain: "gymmanagement-e1a43.firebaseapp.com",
+    projectId: "gymmanagement-e1a43",
+    storageBucket: "gymmanagement-e1a43.appspot.com",
+    messagingSenderId: "852968143428",
+    appId: "1:852968143428:web:b0526c60f0497a49241a11",
+    measurementId: "G-Y3D9CNN9ZV"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
